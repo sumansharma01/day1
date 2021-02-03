@@ -1,0 +1,339 @@
+IMDB DATABASE:
+=======================================================================================
+movie
+[
+	{
+		title:"The shining",
+		year:1980,
+		movie_media:[
+			{
+				url:"theshining.jpg",
+				type:"image"
+			},
+			{
+				url:"theshining.mp4",
+				type:"video"
+			}
+		],
+		movie_genre:["Drama","Horror"],
+		cast:[
+			{
+				role:"Jack Torrance",
+				artist:"Jack Nicholson"
+			},
+			{
+				role:"Wendy Torrance",
+				artist:"Shelley Duvall"
+			}
+		]
+		
+	},
+
+	{
+		title:"One flew over the cuckoos nest",
+		year:1975,
+		movie_media:[
+			{
+				url:"oneflewoverthecuckoosnest.jpg",
+				type:"image"
+			},
+			{
+				url:"oneflewoverthecuckoosnest.mp4",
+				type:"video"
+			}
+		],
+		movie_genre:["Drama"],
+		cast:[
+			{
+				role:"McMurphy",
+				artist:"Jack Nicholson"
+			},
+			{
+				role:"Rose",
+				artist:"Louisa Moritz"
+			}
+		]
+		
+	},
+
+	{
+		title:"The platform",
+		year:2019,
+		movie_media:[
+			{
+				url:"theplatform.jpg",
+				type:"image"
+			},
+			{
+				url:"theplatform.mp4",
+				type:"video"
+			}
+		],
+		movie_genre:["Horror","Sci-fi","Thriller"],
+		cast:[
+			{
+				role:"Goreng",
+				artist:"Ivan Massague"
+			},
+			{
+				role:"Trimagasi",
+				artist:"Zorian Eguliar"
+			},
+			{
+				role:"McMurphy",
+				artist:"Antonio San Juan"
+			}
+		]
+		
+	},
+	
+	{
+		title:"Fight Club",
+		year:1999,
+		movie_media:[
+			{
+				url:"fightclub.jpg",
+				type:"image"
+			},
+			{
+				url:"fightclub.mp4",
+				type:"video"
+			}
+		],
+		movie_genre:["Drama"],
+		cast:[
+			{
+				role:"The narrator",
+				artist:"Edward Norton"
+			},
+			{
+				role:"Tyler Durden",
+				artist:"Brad Pitt"
+			},
+			{
+				role:"Weeping woman",
+				artist:"Eugenie Bondurant"
+			}
+		]
+		
+	}
+
+
+]
+
+
+
+======================================================================================
+actors:
+
+
+[
+	{
+		name:"Jack Nicholson",
+		gender:"M",
+		skills:["Actor","Director","Producer"]
+	},
+	{
+		name:"Brad Pitt",
+		gender:"M",
+		skills:["Actor","Producer","Soundtrack"]
+	},
+	{
+		name:"Edward Norton",
+		gender:"M",
+		skills:["Actor","Producer","Writer"]
+	},
+	{
+		name:"Alexandra Daddario",
+		gender:"F",
+		skills:["Actress","Producer","Soundtrack"]
+	},
+]
+
+
+
+=========================================================================================
+reviews
+
+[
+	{
+		user_name:"Pujan Chaulagain",
+		review:[
+			{
+				movie_title:"The shining",
+				rating:9.0,
+				comment:"Awesome movie"
+			},
+			{
+				movie_title:"One flew over cuckoos nest",
+				rating:9.0,
+				comment:"Best movie ever"
+			},
+
+		]
+	},
+
+	{
+		user_name:"Suman Sharma",
+		review:[
+			{
+				movie_title:"The shining",
+				rating:8.5,
+				comment:"Top-notch acting by Nicholson"
+			},
+			{
+				movie_title:"Fight club",
+				rating:9.0,
+				comment:"One of the best movies I have ever watched"
+			},
+			{
+				movie_title:"The platform",
+				rating:8,
+				comment:"Mindboggling!"
+			}
+
+		]
+	},
+
+]
+
+
+
+
+
+
+SCHOOL DATABASE
+==========================================================================================
+student:
+
+
+{
+	name:"Pujan Chaulagain",
+	registration_number:"17BCE2385",
+	class:"12",
+	section:"A",
+	fave_subjects:["Maths","Science"],
+	skills:["Acting","Singing"],
+	fave_teacher:"Mr. Walsh",
+	fees:{
+		date:"01-01-2021",
+		amount:20000
+	}
+},
+{
+	name:"Sukriti Thapa",
+	registration_number:"18BCE1111",
+	class:"11",
+	section:"B",
+	fave_subjects:["Nepali","English"],
+	skills:["Singing","Dancing","Cooking"],
+	fave_teacher:"Mrs. Rousey",
+	fees:{
+		date:"01-02-2021",
+		amount:30000
+	}
+},
+{
+	name:"John Doe",
+	registration_number:"17BCE9999",
+	class:"10",
+	section:"C",
+	fave_subjects:["History"],
+	skills:["Sports"],
+	fave_teacher:"Mrs. Thompson",
+	fees:{
+		date:"02-15-2021",
+		amount:30000
+	}
+},
+{
+	name:"Suman Sharma",
+	registration_number:"17BCE2398",
+	class:"12",
+	section:"A",
+	fave_subjects:["Maths","Computer","Geography"],
+	skills:["Sports","Critical Thinking"],
+	fave_teacher:"Mrs. Cole",
+	fees:{
+		date:"02-03-2021",
+		amount:30000
+	}
+}
+
+
+
+=================================================================================
+Teacher
+[
+	{
+		name:"Eddie Norton",
+		teacher_id:"GEMS_02",
+		subjects_taught:["History","Geography"],
+		fave_students:["A","B"],
+		incharge_class:11,
+		incharge_section:"B",
+		attendance:{
+				date:"01-01-2021",
+				status_students:[	
+					{
+						student_name:"A",
+						status:"Present"
+					},
+					{
+						student_name:"B",
+						status:"Absent"
+					},
+					{
+						student_name:"C",
+						status:"Present"
+					},
+					{
+						student_name:"D",
+						status:"Absent"
+					}
+					
+				]
+			}
+		
+	},
+	{
+		name:"Cheryl Cole",
+		teacher_id:"GEMS_03",
+		subjects_taught:["Maths","Computer","Physics"],
+		fave_students:["Suman Sharma"],
+		incharge_class:12,
+		incharge_section:"A",
+		attendance:{
+				date:"01-01-2021",
+				status_students:[	
+					{
+						student_name:"Suman Sharma",
+						status:"Present"
+					},
+					{
+						student_name:"Priyanshi Patel",
+						status:"Absent"
+					},
+					{
+						student_name:"Kalind",
+						status:"Present"
+					},
+					{
+						student_name:"Jon Snow",
+						status:"Absent"
+					},
+					{
+						student_name:"Christian Bell",
+						status:"Present"
+					},
+					{
+						student_name:"David Attenborough",
+						status:"Absent"
+					}
+					
+				]
+			}
+		
+	}
+	
+]
