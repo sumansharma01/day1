@@ -1,0 +1,231 @@
+MONGODB for ecommerce
+
+======================================
+products
+
+[
+	{
+		product_name:"T-shirt",
+		basePrice:500,
+		sales:100000,
+		supplierCompany:"zara",
+		media:[
+			{
+				url:"url1",
+				type:"image"
+			},
+			{
+				url:"url2",
+				type:"video"
+			}
+		],
+
+		description:"Best material tshirts on internet",
+		variants:[
+			{
+				type:"size",
+				value:["s","m"]
+			},
+			{
+				type:"color",
+				value:["red","black"]
+			}
+		],
+
+		variantDetails:[
+			{
+				size:"s",
+				color:"red",
+				addOnPrice:10
+			},
+			{
+				size:"s",
+				color:"black",
+				addOnPrice:15
+			},
+			{
+				size:"m",
+				color:"red",
+				addOnPrice:20
+			},
+			{
+				size:"m",
+				color:"black",
+				addOnPrice:25
+			}
+		]
+	},
+	{
+		product_name:"iphone",
+		basePrice:50000,
+		sales:10000,
+		supplierCompany:"apple",
+		media:[
+			{
+				url:"url1",
+				type:"image"
+			},
+			{
+				url:"url2",
+				type:"video"
+			}
+		],
+
+		description:"Iphones, the name is enough, prolly will rip you off though",
+		variants:[
+			{
+				type:"ROM",
+				value:["64GB","128GB"]
+			},
+			{
+				type:"COLOR",
+				value:["red","black"]
+			}
+		],
+
+		variantDetails:[
+			{
+				
+				rom:"64",
+				color:"red",
+				addOnPrice:30000
+			},
+			{
+				rom:"64",
+				color:"black",
+				addOnPrice:35000
+			},
+			{
+				
+				rom:"128",
+				color:"red",
+				addOnPrice:50000
+			},
+			{
+				rom:"128",
+				color:"black",
+				addOnPrice:55000
+			}
+		]
+	},	
+]
+
+
+=========================================================
+orders:
+
+{
+        "order_id" : "V01DER",
+        "customer_name" : "Suman Sharma",
+        "products_bought" : ["T-shirt","iphone"],
+	variants_bought:[
+		{
+			product_name:"T-shirt",
+			size:"s",
+			color:"red",
+			addOnPrice:10
+		},
+		{
+			product_name:"iphone",
+			rom:"64",
+			color:"red",
+			addOnPrice:30000
+		}
+	]
+},
+{
+        "order_id" : "V02DER",
+        "customer_name" : "Risu Marhatta",
+	"products_bought" : ["T-shirt","T-shirt"],
+	variants_bought:[
+		{
+			product_name:"T-shirt",
+			size:"s",
+			color:"red",
+			addOnPrice:10
+		},
+		{
+			product_name:"T-shirt",
+			size:"s",
+			color:"red",
+			addOnPrice:10
+		}
+	]
+        
+}
+
+
+
+===========================================================
+reviews
+{
+        "customer_name" : "Suman Sharma",
+        "review" : [
+                {
+                        "product_name" : "iphone",
+                        "rating" : 5.5,
+                        "comment" : "horrendous"
+                },
+                {
+                        "product_name" : "T-shirt",
+                        "rating" : 8,
+                        "comment" : "Awesome"
+                }
+        ]
+},
+{
+        "customer_name" : "Risu Marhatta",
+        "review" : [
+                {
+                        "product_name" : "T-shirt",
+                        "rating" : 8,
+                        "comment" : "I love it"
+                },
+                {
+                        "product_name" : "iphone",
+                        "rating" : 9,
+                        "comment" : "Awesome"
+                }
+        ]
+}
+
+
+
+
+
+
+GEt all variants by product id:
+"_id" : ObjectId("601e81721f87a26eaf352f3b")
+db.products.find({"_id" : ObjectId("601e81721f87a26eaf352f3b")}).pretty();
+
+2)	Get product details by particular variant id
+
+db.products.find({$and:[{"variantDetails.size":"s"},{"variantDetails.color":"red"}]}).pretty();
+
+
+3)	Write a query to insert a variant inside a product
+
+db.products.updateOne({"_id" : ObjectId("601e81721f87a26eaf352f3b"},{$push:{"variants":{type:"materials-used",value:["cotton","silk"]}}});
+
+
+4)	Get media of a particular variant
+db.products.find({"_id" : ObjectId("601e81721f87a26eaf352f3b")},{media:1}).pretty();
+
+
+6)	Fetch all order by customer id
+ "_id" : ObjectId("601e81a01f87a26eaf352f3d")
+db.orders.find({"_id" : ObjectId("601e81a01f87a26eaf352f3d"))}).pretty();
+
+
+
+7)	Get total number of sales by product Id
+db.products.find({"_id" : ObjectId("601e81721f87a26eaf352f3b")},{sales:1}).pretty();
+
+
+8)	Get total number of sales values for over-all company
+db.products.find({"_id" : ObjectId("601e81721f87a26eaf352f3b")},{sales:1,supplierCompany:1,_id:0}).pretty();
+
+
+5)	Get average rating of a product by id
+
+
